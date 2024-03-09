@@ -1,0 +1,48 @@
+/**
+ * @see https://www.electron.build/configuration/configuration
+ */
+{
+  "appId": "YourAppID",
+  "productName": "MyAllEnd",
+  "asar": true,
+  "directories": {
+    "output": "release/${version}"
+  },
+  "files": [
+    "dist-electron",
+    "dist"
+  ],
+  "mac": {
+    "icon": "public/favicon.png",
+    "artifactName": "${productName}_${version}.${ext}",
+    "target": [
+      "dmg"
+    ]
+  },
+  "linux": {
+    "icon": "public/favicon.png",
+    "artifactName": "${productName}_${version}.${ext}",
+    "target": [
+      "deb"
+    ],
+    "category": "Utility",
+  },
+  "win": {
+    "icon": "public/faviconwin.ico",
+    "artifactName": "${productName}_${version}.${ext}",
+    "target": [
+      {
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
+      }
+    ],
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "deleteAppDataOnUninstall": true
+  }
+}
